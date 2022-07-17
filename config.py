@@ -26,3 +26,25 @@ def func():
     connection_.close()
     return False
   
+  
+  
+# def func():
+#   try:
+#     connection_ = connector.connect(
+#       user="kibsd",
+#       password="p@wdbd3v",
+#       host="kibsd.mysql.pythonanywhere-services.com",
+#       database="kibsd$insee"
+#     )
+#     return connection_
+#   except mysql.connector.Error as err:
+#     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+#       print("Something is wrong with your user name or password")
+#     elif err.errno == errorcode.ER_BAD_DB_ERROR:
+#       print("Database does not exist")
+#     else:
+#       print(err)
+#     return False
+#   else:
+#     connection_.close()
+#     return False

@@ -5,7 +5,9 @@ from model import getAllAdmin, LoginModal
 
 
 
-# powershell: $env:FLASK_APP="index"
+# make dev: export FLASK_ENV=development
+# make dev: $env:FLASK_ENV=development
+# powershell: $env:FLASK_APP="flask_app"
 #cmd : set FLASK_APP = tidal
 app = Flask(__name__)
 CORS(app) # define and initialise cors.
@@ -13,8 +15,11 @@ CORS(app) # define and initialise cors.
 # default route
 @app.route("/")
 def index():
-  getAllAdmin()
   return {"message" : "ola...." }
+
+@app.route("/dummy")
+def dummy():
+  return {"message" : "ola... dummy end point" }
 
 # login end points
 @app.route("/login", methods=['POST', 'GET'] )
@@ -32,3 +37,15 @@ def login():
       return jsonify({"Message":"Passed Empty Data"} )
   else:
     return jsonify({"message": "Not Post Data"})
+  
+  
+  
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+    
+    
+    
+    
+    
+    

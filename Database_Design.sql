@@ -44,6 +44,17 @@ CREATE TABLE InSee.CustomerRegister (
   CONSTRAINT CustomerRegister_PK PRIMARY KEY (customer_id)
 ); 
 
+-- CREATE TABLE CustomerRegister (
+--   customer_id INT(10) NOT NULL AUTO_INCREMENT,
+--   customer_name varchar(100) NULL,
+--   email varchar(50) NULL,
+--   phone varchar(40) NULL,
+--   billing_address varchar(200) NULL,
+--   contact_person varchar(50) NULL,
+--   customer_status int(5) NULL,
+--   CONSTRAINT CustomerRegister_PK PRIMARY KEY (customer_id)
+-- );
+
 CREATE TABLE InSee.SpirometerDeviceRegistration (
   device_id varchar(30) NOT NULL,
   customer_id  decimal(10,0) NOT NULL,
@@ -105,6 +116,19 @@ CREATE TABLE InSee.UserAdminData (
   CONSTRAINT UserAdminData_PK PRIMARY KEY (user_id),
   CONSTRAINT UserAdminData_FK FOREIGN KEY (customer_id) REFERENCES CustomerRegister (customer_id)
 );
+
+-- CREATE TABLE UserAdminData (
+--   user_id int(50) NOT NULL AUTO_INCREMENT,
+--   customer_id int(10) NOT NULL,
+--   user_password varchar(100) NOT NULL,
+--   date_created datetime(6) NULL,
+--   user_status int(5) NULL,
+--   roles int(5) NULL,
+--   last_seen datetime(6) NULL,
+--   user_IP varchar(15) NULL,
+--   CONSTRAINT UserAdminData_PK PRIMARY KEY (user_id),
+--   CONSTRAINT UserAdminData_FK FOREIGN KEY (customer_id) REFERENCES CustomerRegister (customer_id)
+-- );
 
 CREATE TABLE InSee.APILog (
   user_id varchar(50) NULL,
